@@ -1,3 +1,17 @@
-﻿// 64: Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
-// M = 1; N = 5. -> ""1, 2, 3, 4, 5""
-// M = 4; N = 8. -> ""4, 6, 7, 8""
+﻿// 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1.
+// N = 5. -> ""5, 4, 3, 2, 1""
+
+void NaturalNtoOne(int number)
+{
+    if (number == 1)
+    {
+        Console.Write(number);
+        return;
+    }
+    Console.Write($"{number}, ");
+    NaturalNtoOne(number - 1);
+}
+
+Console.Write("Insert natural number: ");
+int numb = Convert.ToInt32(Console.ReadLine());
+NaturalNtoOne(numb);
