@@ -4,9 +4,18 @@
 
 int SummMtoN(int start, int finish)
 {
-    if (start == finish)
-        return finish;
-    return SummMtoN(start + 1, finish) + start;
+    if (start < finish)
+    {
+        if (start == finish)
+            return finish;
+        return SummMtoN(start + 1, finish) + start;
+    }
+    else
+    {
+        if (finish == start)
+            return start;
+        return SummMtoN(finish + 1, start) + finish;
+    }
 }
 
 Console.Write("Insert natural number M: ");
